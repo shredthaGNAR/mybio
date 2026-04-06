@@ -1,18 +1,13 @@
-import tailwindcss from "@tailwindcss/vite";
-// @ts-check
-
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
 
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
 export default defineConfig({
-    site: 'https://nicolazzzz.github.io',
-  integrations: [mdx(), sitemap()],
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  // User/Org Pages (https://<user>.github.io):
+  //   site: 'https://<user>.github.io',
+  //   base: '/'
+//Project Pages (https://<user>.github.io/<repo>/):
+    site: 'https://<user>.github.io/<repo>/',
+    base: '/<repo>/'
+  // site: 'https://your-user.github.io',
+ //  base: '/',
 });
